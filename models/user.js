@@ -17,6 +17,30 @@ const userSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true
+  },
+  shopName: {
+    type: String,
+    require: false
+  },
+  phone: {
+    type: String,
+    required: true
+  },
+  address: {
+    type: String,
+    required: true
+  },
+  bank: {
+    type: String,
+    required: false
+  },
+  branch: {
+    type: String,
+    required: false
+  },
+  acc:{
+    type: String,
+    required: false
   }
 });
 

@@ -28,6 +28,7 @@ mongoose.connect(process.env.MONGODBURL, { useNewUrlParser: true, useUnifiedTopo
 require('./models/user');
 
 
+
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
 
