@@ -5,16 +5,17 @@ const bcrypt = require('bcrypt');
 
 const userRegister = async (req, res) => {
   console.log(req.body);
-  console.log(req.files);
   const { name, email, password, type, shopname, phone, address, bank, branch, acc } = req.body;
   const userModel = mongoose.model('User');
-
+  console.log("run")
   if (!name || !email || !password || !type || !shopname || !phone || !address || !bank || !branch || !acc) {
     return res.status(400).json({
       status: 'fail',
       message: 'Please enter all fields',
     });
   }
+
+  console.log("run2")
 
   try {
     const user = await userModel.findOne({ email: email });
@@ -24,7 +25,7 @@ const userRegister = async (req, res) => {
         message: 'User already exists',
       });
     }
-
+    console.log("run2")
     const hash = await bcrypt.hash(password, 10);
 
     const newData = await userModel.create({

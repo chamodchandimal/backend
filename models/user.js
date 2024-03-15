@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  shopName: {
+  shopname: {
     type: String,
     require: false
   },
